@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: hystrix-dashboard-turbine
+  rabbitmq:
+    username: rabbit
+    password: 123456
+turbine:
+  appConfig: service-ribbon, service-feign
+  aggregator:
+    cluster-config: default
+  clusterNameExpression: new String("default")
+eureka:
+  client:
+    service-url:
+      default-zone: http://registry-server-3:8761/eureka/,http://registry-server-2:8760/eureka/,http://registry-server-1:8759/eureka/
+server:
+  port: 8775
